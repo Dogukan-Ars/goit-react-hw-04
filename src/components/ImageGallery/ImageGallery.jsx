@@ -1,18 +1,20 @@
-import "./ImageGallery.module.css"
+import ImageCard from "./ImageCard/ImageCard"
+import styles from "./ImageGallery.module.css"
 
-const ImageGallery = () => {
+const ImageGallery = ({ items = [], onImageClick }) => {
+    if (!items.length) return null;
+
     return (
-        <>
-            <ul>
-                {/* Resimli liste öğeleri kümesi */}
-                <li>
-                    <div>
-                        <img src="" alt="" />
-                    </div>
+        <ul className={styles.gallery}>
+            {items.map(item => (
+                <li key={item.id} className={styles.item}>
+                    <ImageCard
+                        image={item}
+                        onClick={() => onImageClick(item)}
+                    />
                 </li>
-            </ul>
-
-        </>
+            ))}
+        </ul>
     )
 }
 

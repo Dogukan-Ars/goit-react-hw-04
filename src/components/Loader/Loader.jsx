@@ -1,10 +1,9 @@
-import "./Loader.module.css"
 import { Oval } from 'react-loader-spinner'
 
 const Loader = () => {
     return (
         <>
-            ;<Oval
+            <Oval
                 height={80}
                 width={80}
                 color="#4fa94d"
