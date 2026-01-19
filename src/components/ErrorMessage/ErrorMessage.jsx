@@ -1,13 +1,15 @@
-import "./ErrorMessage.module.css"
+import { FiAlertCircle } from "react-icons/fi";
+import styles from "./ErrorMessage.module.css";
 
-const ErrorMessage = () => {
+const ErrorMessage = ({
+    message = "Aradığınız kriterlere uygun sonuç bulunamadı. Lütfen farklı bir arama terimi deneyin.",
+}) => {
     return (
-        <>
-            <div>
-                <p>Aradığınız kriterlere uygun sonuç bulunamadı. Lütfen farklı bir arama terimi deneyin.</p>
-            </div>
-        </>
-    )
-}
+        <div className={styles.wrapper} role="alert">
+            <FiAlertCircle className={styles.icon} />
+            <p className={styles.text}>{message}</p>
+        </div>
+    );
+};
 
-export default ErrorMessage
+export default ErrorMessage;

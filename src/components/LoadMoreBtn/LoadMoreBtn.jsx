@@ -1,9 +1,9 @@
 import "./LoadMoreBtn.module.css"
 
-const LoadMoreBtn = () => {
+const LoadMoreBtn = ({ onClick }) => {
     return (
         <>
-            <button type="button">Load More</button>
+            <button type="button" onClick={onClick}>Load More</button>
         </>
     )
 }

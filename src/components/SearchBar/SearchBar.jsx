@@ -1,8 +1,8 @@
 import toast from "react-hot-toast";
 import styles from "./SearchBar.module.css"
+import { FiSearch } from "react-icons/fi";
 
 const SearchBar = ({ onSearch }) => {
-    // src/components/SearchForm.jsx
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
@@ -18,10 +18,24 @@ const SearchBar = ({ onSearch }) => {
         form.reset();
     };
 
+    const handleSearch = () => {
+        const form = document.querySelector(`.${styles.form}`);
+        const topic = form.elements.topic.value.trim();
+        if (!topic) {
+            toast.error("Please enter a search term");
+            return;
+        }
+        onSearch(topic);
+        form.reset();
+    }
+
     return (
         <>
             <header className={styles.header}>
                 <form onSubmit={handleSubmit} className={styles.form}>
+
+                    <FiSearch size={18} className={styles.icon} onClick={handleSearch} />
+
                     <input
                         className={styles.input}
                         name="topic"
@@ -30,7 +44,6 @@ const SearchBar = ({ onSearch }) => {
                         autoFocus
                         placeholder="Search images and photos"
                     />
-                    <button type="submit" className={styles.button}>Search</button>
                 </form>
             </header>
         </>

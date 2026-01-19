@@ -5,9 +5,11 @@ const ImageCard = ({ image, onClick }) => {
     return (
         <div
             className={style.card}
-            onClick={onClick}
             role="button"
             tabIndex={0}
+            // Tıklanınca image bilgisini üst componente gönderiyoruz
+            onClick={() => onClick(image)}
+            // Klavye erişilebilirliği (Enter ile açılabilir)
             onKeyDown={(e) => e.key === 'Enter' && onClick()}
         >
             <img
@@ -15,7 +17,7 @@ const ImageCard = ({ image, onClick }) => {
                 alt={alt_description || "Unsplash image"}
                 className={style.image}
             />
-            <p className={style.author}>Photo by {user.name}</p>
+            <p className={style.author}><span className={style.photo_own}>Photo by</span> {user.name}</p>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import ImageCard from "./ImageCard/ImageCard"
+import ImageCard from "../ImageCard/ImageCard"
 import styles from "./ImageGallery.module.css"
 
 const ImageGallery = ({ items = [], onImageClick }) => {
@@ -10,7 +10,7 @@ const ImageGallery = ({ items = [], onImageClick }) => {
                 <li key={item.id} className={styles.item}>
                     <ImageCard
                         image={item}
-                        onClick={() => onImageClick(item)}
+                        onClick={onImageClick}
                     />
                 </li>
             ))}
