@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import styles from "./SearchBar.module.css"
 import { FiSearch } from "react-icons/fi";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSubmit }) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
@@ -14,7 +14,7 @@ const SearchBar = ({ onSearch }) => {
             return;
         };
 
-        onSearch(topic);
+        onSubmit(topic);
         form.reset();
     };
 
@@ -25,7 +25,7 @@ const SearchBar = ({ onSearch }) => {
             toast.error("Please enter a search term");
             return;
         }
-        onSearch(topic);
+        onSubmit(topic);
         form.reset();
     }
 

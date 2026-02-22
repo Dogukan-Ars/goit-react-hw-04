@@ -29,7 +29,7 @@ function App() {
     <div>
       <Toaster position="top-right" />
 
-      <SearchBar onSearch={search} />
+      <SearchBar onSubmit={search} />
 
       {error && <ErrorMessage message="The server could not be reached. Please try again later." />}
       {loading && <Loader />}

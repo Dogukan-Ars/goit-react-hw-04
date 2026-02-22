@@ -1,7 +1,6 @@
 // src/imagesApi.js
 import axios from "axios";
 
-console.log("images-api loaded");
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 const ACCESS_KEY = import.meta.env.VITE_API_KEY;
 

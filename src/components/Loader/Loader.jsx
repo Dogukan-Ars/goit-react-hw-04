@@ -1,8 +1,9 @@
 import { Oval } from 'react-loader-spinner'
+import styles from "./Loader.module.css"
 
 const Loader = () => {
     return (
-        <>
+        <div className={styles.loaderWrapper}>
             <Oval
                 height={80}
                 width={80}
@@ -12,8 +13,9 @@ const Loader = () => {
                 secondaryColor="#4fa94d"
                 strokeWidth={2}
                 strokeWidthSecondary={2}
+                className={styles.loader}
             />
-        </>
+        </div>
     )
 }
 
